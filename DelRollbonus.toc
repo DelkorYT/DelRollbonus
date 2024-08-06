@@ -1,0 +1,8 @@
+## Interface: 11305
+## Title: DelRollbonus
+## SavedVariables: DRB_MC1, DRB_MC3
+## SavedVariablesPerCharacter: DRB_Raid
+core.lua
+
+
+
