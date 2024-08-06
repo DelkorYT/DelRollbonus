@@ -78,7 +78,7 @@ f:SetScript("OnEvent", function(self, event, ...)
 					chunk = chunk .. k .. v .. ";"
 				else
 					table.insert(chunks, chunk)
-					chunk = num .. k .. v .. ";"
+					chunk = tostring(num) .. k .. v .. ";"
 				end
 			end
 			table.insert(chunks, chunk)
@@ -104,8 +104,6 @@ f:SetScript("OnEvent", function(self, event, ...)
 
 		-- MANUAL CALL OF THE SYNC FUNCTION
 		function DRBSync(num)
-			num = tostring(num)
-			print(str)
 			local tbl
 			if num == 1 then
 				tbl = DRB_MC1
@@ -131,6 +129,27 @@ f:SetScript("OnEvent", function(self, event, ...)
 			else
 				return
 			end
+		end
+	end
+
+	SLASH_SYNC1 = "/drbsync"
+	SlashCmdList["SYNC"] = function(msg)
+		msg = tonumber(msg)
+		if msg == 1 or msg == 3 then
+			DRBSync(msg)
+		else
+			return
+		end
+	end
+
+	SLASH_MC1 = "/drbmc"
+	SlashCmdList["MC"] = function(msg)
+		msg = tonumber(msg)
+		if msg == 1 or msg == 3 then
+			DRBRaid(msg)
+			ReloadUI()
+		else
+			return
 		end
 	end
 
