@@ -14,4 +14,4 @@ drbmc takes the number of the raid as an argument, i.e. 1 or 3. It then saves th
 
 # Usage
 
-Either use Gargul's integrated feature to roll out loot and DRB will hook into those raidmessages or you can send "start" or "stop" into raidchat to reset the roll-table / print the current roll-table
+Either use Gargul's integrated feature to roll out loot and DRB will hook into those raidmessages or you can send `start` or `stop` into raidchat to reset the roll-table / print the current roll-table
